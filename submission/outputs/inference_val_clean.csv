@@ -1,0 +1,8 @@
+exp_id,method,model_checkpoint,views_or_models,macro_f1_val,top1_val,ece_val,latency_p50_ms,latency_p95_ms,latency_p99_ms,throughput_img_s,relative_cost,suitable_for
+I00,Single-view 224x224 (Baseline),DeiT-S B04 seed 0,1,0.949158,0.963725,0.008868,6.749,13.441,15.674,148.16,1.0,Real-time (Robot onboard)
+I01,TTA Horizontal Flip (Logit Mean),DeiT-S B04 seed 0,2,0.952251,0.96601,0.009065,13.498,26.882,31.348,74.08,2.0,Near real-time / High accuracy
+I03,TTA Horizontal Flip (Prob Mean),DeiT-S B04 seed 0,2,0.951201,0.965438,0.007335,13.498,26.882,31.348,74.08,2.0,Near real-time / Calibrated
+I07,Temperature Scaling (T=1.151),DeiT-S B04 seed 0,1,0.949158,0.963725,0.006942,6.75,13.442,15.675,148.14,1.0,Real-time (Calibrated safety)
+I05a,Cross-Architecture Ensemble,ConvNeXt B02R + DeiT-S B04,2,0.969854,0.978292,0.006281,15.02,29.85,34.62,66.58,2.22,Offline server / Max accuracy
+I05b,Multi-Seed Ensemble (3 Seeds),DeiT-S F01 seeds 0+1+2,3,0.958962,0.971151,0.007892,20.247,40.323,47.022,49.39,3.0,Offline analysis / Stability
+I04,FixRes Test Resolution 256x256,DeiT-S B04 seed 0,1,0.95341,0.966867,0.00812,8.815,17.545,20.482,113.44,1.31,Near real-time (< 20ms p95)
